@@ -9,6 +9,7 @@ public class Estadisticas {
         DatosEstadisticos datosEstadisticos = new DatosEstadisticos();
         BigInteger resCierto = n.multiply(m);
         Multiplica mul = new MultiplicaSuma();
+        //Multiplicación por sumas
         if (A == true) {
             datosEstadisticos.setResSuma(new MultiplicaSuma().multiplica(n, m));
             if (!resCierto.equals(datosEstadisticos.getResultado()[0])) {
@@ -16,18 +17,20 @@ public class Estadisticas {
             }
             datosEstadisticos.TiempoSuma(repetir(n, m, mul));
         }
+        //Multiplicación Rusa
         mul = new MultiplicaRusa();
         datosEstadisticos.setResRusa(new MultiplicaRusa().multiplica(n, m));
         if (!resCierto.equals(datosEstadisticos.getResultado()[1])) {
             System.out.println("ERROR");
         }
-        datosEstadisticos.TiempoSuma(repetir(n, m, mul));
+        datosEstadisticos.TiempoRusa(repetir(n, m, mul));
+        //Multiplicación Egipcia
         mul = new MultiplicaEgipcia();
         datosEstadisticos.setResEgipcio(new MultiplicaEgipcia().multiplica(n, m));
         if (!resCierto.equals(datosEstadisticos.getResultado()[2])) {
             System.out.println("ERROR");
         }
-        datosEstadisticos.TiempoSuma(repetir(n, m, mul));
+        datosEstadisticos.TiempoEgipcia(repetir(n, m, mul));
         return datosEstadisticos;
     }
 

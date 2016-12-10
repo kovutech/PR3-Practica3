@@ -9,8 +9,6 @@ public class MultiplicaSuma implements Multiplica {
         if (m.equals(CERO)) {
             return m;
         }
-        System.out.println(m);
         return n.add(multiplica(n, m.subtract(UNO)));
     }
-
 }
